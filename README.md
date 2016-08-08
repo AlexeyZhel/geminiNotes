@@ -8,7 +8,7 @@ Installation:
 Install gulp and bower: 
 - npm install -g bower gulp gulp-cli
 
-Install applcitaion requirements using npm: 
+Install application requirements using npm: 
 - npm install
 
 Install application requirements using bower:
