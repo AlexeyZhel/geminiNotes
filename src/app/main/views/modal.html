@@ -1,0 +1,23 @@
+<form class="form-horizontal">
+    <div class="modal-header">
+      <h3 class="modal-title" ng-if="notesCrEdCtrl.note.id">{{ notesCrEdCtrl.edit_tr }} '{{ notesCrEdCtrl.initialNote.title }}' {{ notesCrEdCtrl.note_tr }}</h3>
+      <h3 class="modal-title" ng-if="!notesCrEdCtrl.note.id">{{ notesCrEdCtrl.add_tr }} {{ notesCrEdCtrl.note_tr }}</h3>
+    </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="textinput">{{ notesCrEdCtrl.title_tr }}</label>
+      <div class="col-md-6">
+        <input id="title" name="title" type="text" placeholder="{{ notesCrEdCtrl.enter_title_here_tr }}" class="form-control input-md" ng-model="notesCrEdCtrl.note.title">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="btns"></label>
+      <div class="col-md-8">
+        <button id="save-btn" name="save-btn" ng-disabled="!notesCrEdCtrl.note.title" ng-click='notesCrEdCtrl.save()' class="btn btn-info">{{ notesCrEdCtrl.save_tr }}</button>
+        <button id="cancel-btn" name="cancel-btn" ng-click='notesCrEdCtrl.cancel()' class="btn btn-danger">{{ notesCrEdCtrl.cancel_tr }}</button>
+      </div>
+    </div>
+  </div>
+</form>
