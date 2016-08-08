@@ -1,10 +1,10 @@
 <header class="header">
   <p class="header-title">
-    {{ notesCtrl.header_tr }}
+    {{ notesCtrl.headerTr }}
   </p>
 
   <div>
-    <span class="language-name">{{ notesCtrl.language_tr }}:</span>
+    <span class="language-name">{{ notesCtrl.languageTr }}:</span>
     <select class="language-selector" ng-options="language as language.name for language in notesCtrl.languages"
             ng-model="notesCtrl.selectedLanguage" ng-change="notesCtrl.changeLanguage()">
     </select>
@@ -12,7 +12,7 @@
 </header>
 
 <div id="add-btn-wrapper">
-  <button id='add-btn' class="btn btn-primary add-btn" ng-click="notesCtrl.addNote()">{{ notesCtrl.add_tr }}</button>
+  <button id='add-btn' class="btn btn-primary add-btn" ng-click="notesCtrl.addNote()">{{ notesCtrl.addTr }}</button>
 </div>
 
 <div id="grid-wrapper">

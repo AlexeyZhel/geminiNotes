@@ -68,27 +68,28 @@
     }
 
     function defineTranslations() {
-      $translate(['HEADER', 'ADD', 'EDIT', 'DELETE', 'INFO', 'ACTIONS', 'TITLE', 'ID', 'LANGUAGE']).then(function (translations) {
-        vm.header_tr = translations.HEADER;
-        vm.language_tr = translations.LANGUAGE;
-        vm.add_tr = translations.ADD;
-        vm.edit_tr = translations.EDIT;
-        vm.delete_tr = translations.DELETE;
-        vm.info_tr = translations.INFO;
-        vm.actions_tr = translations.ACTIONS;
-        vm.title_tr = translations.TITLE;
-        vm.id_tr = translations.ID;
-        defineGrid(vm.id_tr, vm.title_tr, vm.actions_tr);
+      $translate(['HEADER', 'ADD', 'EDIT', 'DELETE', 'INFO', 'ACTIONS', 'TITLE', 'ID', 'LANGUAGE'])
+        .then(function (translations) {
+        vm.headerTr = translations.HEADER;
+        vm.languageTr = translations.LANGUAGE;
+        vm.addTr = translations.ADD;
+        vm.editTr = translations.EDIT;
+        vm.deleteTr = translations.DELETE;
+        vm.infoTr = translations.INFO;
+        vm.actionsTr = translations.ACTIONS;
+        vm.titleTr = translations.TITLE;
+        vm.idTr = translations.ID;
+        defineGrid(vm.idTr, vm.titleTr, vm.actionsTr);
       }, function (translationIds) {
-        vm.header_tr = translationIds.header_tr;
-        vm.language_tr = translationIds.language_tr;
-        vm.add_tr = translationIds.add_tr;
-        vm.edit_tr = translationIds.edit_tr;
-        vm.delete_tr = translationIds.delete_tr;
-        vm.info_tr = translationIds.info_tr;
-        vm.actions_tr = translationIds.actions_tr;
-        vm.title_tr = translationIds.title_tr;
-        vm.id_tr = translationIds.id_tr;
+        vm.headerTr = translationIds.headerTr;
+        vm.languageTr = translationIds.languageTr;
+        vm.addTr = translationIds.addTr;
+        vm.editTr = translationIds.editTr;
+        vm.deleteTr = translationIds.deleteTr;
+        vm.infoTr = translationIds.infoTr;
+        vm.actionsTr = translationIds.actionsTr;
+        vm.titleTr = translationIds.titleTr;
+        vm.idTr = translationIds.idTr;
       });
     }
 
@@ -121,7 +122,7 @@
     function removeRecord(record) {
       record.remove().then(function () {
         getNotes();
-      })
+      });
     }
 
     function removeNote(note) {
@@ -147,11 +148,11 @@
       if (record.id) {
         record.save().then(function () {
           getNotes();
-        })
+        });
       } else {
         Note.post(record).then(function () {
           getNotes();
-        })
+        });
       }
     }
 

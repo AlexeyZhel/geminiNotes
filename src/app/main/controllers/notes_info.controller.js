@@ -16,11 +16,11 @@
     };
 
     $translate(['OK', 'NOTE_ID']).then(function (translations) {
-      vm.ok_tr = translations.OK;
-      vm.note_id_tr = translations.NOTE_ID;
+      vm.okTr = translations.OK;
+      vm.noteIdTr = translations.NOTE_ID;
     }, function (translationIds) {
-      vm.ok_tr = translationIds.ok_tr;
-      vm.note_id_tr = translationIds.note_id_tr;
+      vm.okTr = translationIds.okTr;
+      vm.noteIdTr = translationIds.noteIdTr;
     });
   }
 })();

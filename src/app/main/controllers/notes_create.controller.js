@@ -11,21 +11,21 @@
     var vm = this;
 
     $translate(['SAVE', 'CANCEL', 'TITLE', 'ADD', 'EDIT', 'NOTE', 'ENTER_TITLE_HERE']).then(function (translations) {
-      vm.save_tr = translations.SAVE;
-      vm.cancel_tr = translations.CANCEL;
-      vm.title_tr = translations.TITLE;
-      vm.add_tr = translations.ADD;
-      vm.edit_tr = translations.EDIT;
-      vm.note_tr = translations.NOTE;
-      vm.enter_title_here_tr = translations.ENTER_TITLE_HERE;
+      vm.saveTr = translations.SAVE;
+      vm.cancelTr = translations.CANCEL;
+      vm.titleTr = translations.TITLE;
+      vm.addTr = translations.ADD;
+      vm.editTr = translations.EDIT;
+      vm.noteTr = translations.NOTE;
+      vm.enterTitleHereTr = translations.ENTER_TITLE_HERE;
     }, function (translationIds) {
-      vm.save_tr = translationIds.save_tr;
-      vm.cancel_tr = translationIds.cancel_tr;
-      vm.title_tr = translationIds.title_tr;
-      vm.add_tr = translationIds.add_tr;
-      vm.edit_tr = translationIds.edit_tr;
-      vm.note_tr = translationIds.note_tr;
-      vm.enter_title_here_tr = translationIds.enter_title_here_tr;
+      vm.saveTr = translationIds.saveTr;
+      vm.cancelTr = translationIds.cancelTr;
+      vm.titleTr = translationIds.titleTr;
+      vm.addTr = translationIds.addTr;
+      vm.editTr = translationIds.editTr;
+      vm.noteTr = translationIds.noteTr;
+      vm.enterTitleHereTr = translationIds.enterTitleHereTr;
     });
 
     vm.initialNote = note;
