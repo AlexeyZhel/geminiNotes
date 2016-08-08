@@ -5,15 +5,20 @@ node >=0.10.0
 
 Installation:
 
-1. Install gulp and bower
-npm install -g bower gulp gulp-cli
-2. Install application requirements using bower
-bower install
-3. Build and run application
-gulp serve:dist
+Install gulp and bower: 
+- npm install -g bower gulp gulp-cli
+
+Install applcitaion requirements using npm: 
+- npm install
+
+Install application requirements using bower:
+- bower install
+
+Build and run application:
+- gulp serve:dist
 
 To run unit tests:
-gulp test
+- gulp test
 
 To run e2e tests:
-gulp protractor
+- gulp protractor
