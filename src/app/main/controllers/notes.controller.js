@@ -34,7 +34,7 @@
 
     function changeLanguage() {
       $translate.use(vm.selectedLanguage.key);
-      defineTranslations();
+      defineGridTranslations();
     }
 
     function defineGrid(id, title, actions) {
@@ -67,30 +67,15 @@
       };
     }
 
-    function defineTranslations() {
-      $translate(['HEADER', 'ADD', 'EDIT', 'DELETE', 'INFO', 'ACTIONS', 'TITLE', 'ID', 'LANGUAGE'])
+    function defineGridTranslations() {
+      $translate(['ACTIONS', 'TITLE', 'ID'])
         .then(function (translations) {
-        vm.headerTr = translations.HEADER;
-        vm.languageTr = translations.LANGUAGE;
-        vm.addTr = translations.ADD;
-        vm.editTr = translations.EDIT;
-        vm.deleteTr = translations.DELETE;
-        vm.infoTr = translations.INFO;
-        vm.actionsTr = translations.ACTIONS;
-        vm.titleTr = translations.TITLE;
-        vm.idTr = translations.ID;
-        defineGrid(vm.idTr, vm.titleTr, vm.actionsTr);
-      }, function (translationIds) {
-        vm.headerTr = translationIds.headerTr;
-        vm.languageTr = translationIds.languageTr;
-        vm.addTr = translationIds.addTr;
-        vm.editTr = translationIds.editTr;
-        vm.deleteTr = translationIds.deleteTr;
-        vm.infoTr = translationIds.infoTr;
-        vm.actionsTr = translationIds.actionsTr;
-        vm.titleTr = translationIds.titleTr;
-        vm.idTr = translationIds.idTr;
-      });
+          var actionsTr = translations.ACTIONS,
+              titleTr = translations.TITLE,
+              idTr = translations.ID;
+
+          defineGrid(idTr, titleTr, actionsTr);
+        });
     }
 
     function getNotes() {
