@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('gemini', ['ui.bootstrap', 'restangular', 'ui.router', 'ui.grid', 'pascalprecht.translate']);
+    .module('gemini', ['ui.bootstrap', 'ngResource', 'ui.router', 'ui.grid', 'pascalprecht.translate']);
 
 })();

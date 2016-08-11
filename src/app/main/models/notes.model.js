@@ -3,15 +3,16 @@
 
   angular
     .module('gemini')
-    .service('Note', notesModel);
+    .factory('Note', notesModel);
 
-  notesModel.$inject = ['Restangular'];
+  notesModel.$inject = ['$resource'];
 
-  function notesModel(Restangular) {
-    Restangular.setBaseUrl('http://private-9aad-note10.apiary-mock.com/');
-    return Restangular.service('notes');
+  function notesModel($resource) {
+    return $resource("http://private-9aad-note10.apiary-mock.com/notes/:id", null,
+      {
+        'update': { method:'PUT' }
+      });
   }
-
 })();
 
 

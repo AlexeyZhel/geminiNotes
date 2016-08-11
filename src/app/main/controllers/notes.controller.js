@@ -5,9 +5,9 @@
     .module('gemini')
     .controller('NotesController', NotesController);
 
-  NotesController.$inject = ['Note', '$modal', 'Restangular', '$translate', 'geminiConfig'];
+  NotesController.$inject = ['Note', '$modal', '$translate', 'geminiConfig'];
 
-  function NotesController(Note, $modal, Restangular, $translate, geminiConfig) {
+  function NotesController(Note, $modal, $translate, geminiConfig) {
     var vm = this;
 
     vm.changeLanguage = changeLanguage;
@@ -79,8 +79,8 @@
     }
 
     function getNotes() {
-      Note.getList().then(function (notes) {
-        vm.notes = notes;
+      Note.query(function(data) {
+        vm.notes = data;
         setHeight();
       });
     }
@@ -105,7 +105,7 @@
     }
 
     function removeRecord(record) {
-      record.remove().then(function () {
+      Note.delete({ id: record.id }, function() {
         getNotes();
       });
     }
@@ -131,18 +131,18 @@
 
     function submitRecord(record) {
       if (record.id) {
-        record.save().then(function () {
+        Note.update({ id: record.id }, record, function() {
           getNotes();
         });
       } else {
-        Note.post(record).then(function () {
+        Note.save(record, function() {
           getNotes();
         });
       }
     }
 
     function showInfo(note) {
-      Restangular.one('notes', note.id).get().then(function (noteInfo) {
+      Note.get({ id: note.id }, function(noteInfo) {
         $modal.open({
           templateUrl: 'app/main/views/info_modal.html',
           controller: 'NotesInfoController',
