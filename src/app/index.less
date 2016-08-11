@@ -11,25 +11,27 @@
  */
 @navbar-inverse-link-color: #5AADBB;
 @icon-font-path: '../../bootstrap/fonts/';
+@header_text_color: white;
+@header_background_color: #1f1f1f;
 
 
 .header {
   display: flex;
   align-items: center;
-  background-color: #1f1f1f;
+  background-color: @header_background_color;
 }
 
 .header-title {
   flex: 1;
   font-size: 1.5rem;
   margin: 1rem;
-  color: white;
+  color: @header_text_color;
 }
 
 .language-name {
   font-size: 1.5rem;
   margin: 1rem;
-  color: white;
+  color: @header_text_color;
 }
 
 .language-selector {
